@@ -35,9 +35,6 @@ This project provides a MATLAB implementation for DC power flow analysis, with a
 - **`CalcThetas2.m`**  
   Computes the DC power flow including system losses.
 
-- **`DispAll.m`**  
-  Displays all computed results and provides a complete overview of the analysis.
-
 - **`DispResults.m`**  
   Displays specific results of interest, such as power flows and voltages.
 

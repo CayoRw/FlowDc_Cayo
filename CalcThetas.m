@@ -9,7 +9,6 @@ classdef CalcThetas
             obj.Pcirc = zeros(NLin,1);
             thetasl = -inv(Bbusl) * Pespl;
             obj.thetas = [thetasl(1:sw-1); 0; thetasl(sw:end)]; %adding 0 in theta vector to swing bar
-
             for il = 1:NLin
                 k = LinData(il, 1);
                 m = LinData(il, 2);

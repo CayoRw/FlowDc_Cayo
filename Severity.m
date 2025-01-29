@@ -17,7 +17,8 @@ classdef Severity
             obj.Sum = 0;
             for il = 1:NLin
                 flows =  abs(FlowP(il,1));
-                limflow = abs(DCIR(il,10)*1.15);
+                %limflow = abs(DCIR(il,10)*1.15);
+                limflow = abs(DCIR(il,10));
                 Value = obj.Verify(flows,limflow);
                 if Value ~= 0
                     disp(sprintf('O circuito %2d para %2d tem capacidade de %4f. Passou com %4f com uma severidade de %4f',DCIR(il,1),DCIR(il,2),limflow,FlowP(il,1),Value));
@@ -33,8 +34,8 @@ classdef Severity
             if (Sij<=SijMax)
                 OverL = 0;
             else
-                OverL = (Sij - (SijMax*0.85))/(SijMax*0.85);
-                %OverL = (Sij - (SijMax))/(SijMax);
+                %OverL = (Sij - (SijMax*0.85))/(SijMax*0.85);
+                OverL = (Sij - (SijMax))/(SijMax);
             end
         end
         function [Sum,Qtd] = getSum(obj)

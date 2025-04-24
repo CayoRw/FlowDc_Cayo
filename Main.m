@@ -4,7 +4,7 @@ clc
 clear all
 
 % File name
-filename = 'dados_sistema13B_EC3_Teste1.txt';
+filename = 'dados_sistema13B_EC3_CasoBase.txt';
 %filename = 'Data_Example.txt';
 
 % Inicializating

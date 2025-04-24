@@ -1,82 +1,69 @@
-# DC Flow Analysis
+# DC Power Flow Analysis in MATLAB (with and without losses)
 
-This project provides a MATLAB implementation for DC power flow analysis, with and without losses. It includes all the necessary files to simulate and analyze DC systems based on input data provided by the user.
-
-## Features
-
-- **Lossless DC Flow Calculation**: Implemented in `CalcThetas.m`.
-- **DC Flow with Losses**: Implemented in `CalcThetas2.m`.
-- **Customizable Input Data**: Define your system using the provided example format in `Data_Example.txt`.
-- **Result Display and Analysis**: Functions to display results (`DispResults.m`) and manage output data.
-- **Y-Bus Matrix Generation**: Constructed using `MakeYBus.m`.
+This project provides a MATLAB-based implementation for **DC power flow analysis** in electrical power systems. It supports both **lossless** and **lossy** DC power flow methods, allowing users to analyze different system configurations using input data provided in `.txt` files.
 
 ---
 
-## Getting Started
+## ⚙️ Features
 
-### Prerequisites
-
-- MATLAB installed on your machine.
-- Basic knowledge of DC power flow concepts.
-
----
-
-### File Descriptions
-
-- **`Main.m`**  
-  The main script to run the DC flow analysis. Start your analysis by executing this file.
-
-- **`Data_Example.txt`**  
-  Example of the input data format. Users must follow this structure to define their system parameters in a `.txt` file.
-
-- **`CalcThetas.m`**  
-  Computes the DC power flow without considering losses.
-
-- **`CalcThetas2.m`**  
-  Computes the DC power flow including system losses.
-
-- **`DispResults.m`**  
-  Displays specific results of interest, such as power flows and voltages.
-
-- **`GetPesp.m`**  
-  Extracts or computes the power injection vector from the input data.
-
-- **`MakeYBus.m`**  
-  Constructs the Y-Bus matrix based on the input system data.
-
-- **`ReadData.m`**  
-  Reads the input file (e.g., `Data_Example.txt`) and processes the data for analysis.
-
-- **`README.md`**  
-  This file, containing information about the project, its structure, and how to use it.
+- 🔌 **Lossless DC Flow Calculation** – Implemented in `CalcThetas.m`
+- 🔥 **DC Flow with Losses** – Implemented iteratively in `CalcThetas2.m`
+- 📁 **Customizable Input Data** – Based on user-defined text files (e.g., `Data_Example.txt`)
+- 📊 **Results Display** – Formatted results output using `DispResults.m`
+- 🔣 **Y-Bus Matrix Generation** – Automatically built from system data using `MakeYBus.m`
 
 ---
 
-## How to Use
+## 🚀 Getting Started
 
-1. **Prepare Your Input Data**:  
-   - Edit the input `.txt` file (e.g., `Data_Example.txt`) to define your system's parameters.
-   - Follow the format provided in the example.
+### ✅ Prerequisites
 
-2. **Run the Main Script**:  
+- MATLAB (R2016 or newer recommended)
+- Basic knowledge of power system analysis and DC power flow
+
+### 📁 File Structure
+
+| File               | Description                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| `main.m`           | Main script to execute the DC power flow analysis                           |
+| `Data_Example.txt` | Template for input data – follow this format for your own system definition |
+| `ReadData.m`       | Reads and parses the input `.txt` file                                      |
+| `MakeYBus.m`       | Builds the Y-Bus matrix for the DC system                                   |
+| `GetPesp.m`        | Computes the power injection vector (Pesp)                                  |
+| `CalcThetas.m`     | Performs lossless DC power flow analysis                                    |
+| `CalcThetas2.m`    | Performs DC power flow analysis with losses using iterative correction      |
+| `DispResults.m`    | Displays the results of power flows, losses, and angles                     |
+
+---
+
+## 🧪 How to Use
+
+1. **Prepare Your Input File**  
+   - Use `Data_Example.txt` as a reference.
+   - Create your own data file (e.g., `dados_sistema13B_EC3_Teste1.txt`) using the same structure.
+
+2. **Run the Analysis**
    - Open MATLAB and navigate to the project folder.
-   - Run `Main.m` by typing the following in the MATLAB Command Window:
+   - Execute the main script:
      ```matlab
-     run('Main.m')
+     run('main.m')  % or 'Main.m', depending on your file name
      ```
 
-3. **Choose the Flow Type**:  
-   - Use the appropriate function (`CalcThetas.m` or `CalcThetas2.m`) for lossless or lossy DC flow analysis.
+3. **Choose the Flow Type**
+   - The script automatically computes:
+     - Lossless DC flow (`CalcThetas.m`)
+     - Lossy DC flow with iteration (`CalcThetas2.m`)
 
-4. **View Results**:  
-   - Use `DispResults.m` or `DispAll.m` to visualize the outcomes.
+4. **View Results**
+   - Outputs are displayed in the MATLAB console.
+   - Use `DispResults.m` to format and explore results in more detail.
 
 ---
 
-## Example Usage
+## 📌 Example Usage
 
-1. Set up the input file `Data_Example.txt`:
-
-2. Run the `Main.m` script:
+Example:
 ```matlab
-run('Main.m')
+% In main.m
+filename = 'dados_sistema13B_EC3_Teste1.txt';
+run('main.m')

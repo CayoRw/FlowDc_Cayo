@@ -65,5 +65,6 @@ This project provides a MATLAB-based implementation for **DC power flow analysis
 Example:
 ```matlab
 % In main.m
-filename = 'dados_sistema13B_EC3_Teste1.txt';
-run('main.m')
+% Make sure have:
+filename = 'dados_sistema13B_EC3_CasoBase.txt';
+% Run the Main.m

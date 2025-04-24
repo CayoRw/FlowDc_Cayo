@@ -1,3 +1,5 @@
+% Follow me on Github: www.github.com/CayoRw
+
 clc
 clear all
 
@@ -38,3 +40,5 @@ e = CalcThetas2(DCIR,DBAR,BBus,Bbus,Bbusl,Pespl,sw,tol); %If you dont want disp 
 
 %Print the results
 DispResults(Pcirc, Pcirc2, thetas, thetas2, Plosskm, DBAR2, DCIR, Sbase);    
+
+% You can acess (and favorite) all the code on: www.github.com/CayoRw/FlowDc_Cayo
